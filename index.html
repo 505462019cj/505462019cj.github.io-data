@@ -1,54 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-
-        div{
-            width: 200px;
-            height: 200px;
-            background-color: red;
-            animation: myAnim 5s linear 0s infinite;
-        }
-
-        div:hover{
-            animation-play-state: paused;
-        }
-
-        @keyframes myAnim{
-            0%{
-                width: 200px;
-                background-color: red;
-            }
-            25%{
-                width: 300px;
-                background-color: blue;
-            }
-            50%{
-                width: 400px;
-                background-color: green;
-            }
-            75%{
-                width: 300px;
-                background-color: blue;
-            }
-            100%{
-                width: 200px;
-                background-color: red;
-            }
-        }
-
-
-
-    </style>
+    <link rel="stylesheet" href="./数据集.css">
 </head>
+
 <body>
 
-    <div></div>
-    
-    
+    <div class="all">
+        <!-- 测试样本 -->
+        <div class="sample_set">
+            <h3 class="test_sample_h3_01">测试样本</h3>
+            <table class="test_table">
+                <tr>
+                    <td>
+                        <img src="./原始图片/RgbImage161636.bmp" alt="" class="test_image">
+                        <img src="./原始图片/RgbImage162253.bmp" alt="" class="test_image">
+                        <div class="tset_image_a">
+                            <a href="./原始图片/">点击查看更多</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 训练样本 -->
+        <div class="sample_set_02">
+            <h3 class="sample_set_h3_1">训练样本</h3>
+            <div class="container-box">
+                <div class="sample_after_cuting">
+                    <p class="sample_set_03">切割后有裂纹</p>
+                    <table class="test_table2">
+                        <tr>
+                            <td>
+                                <img src="./训练样本/有裂纹/10_slice_3_0.jpg" alt="" class="training_image">
+                                <img src="./训练样本/有裂纹/10_slice_3_1.jpg" alt="" class="training_image">
+                                <img src="./训练样本/有裂纹/10_slice_3_2.jpg" alt="" class="training_image">
+                                <img src="./训练样本/有裂纹/10_slice_3_3.jpg" alt="" class="training_image">
+
+                                <div class="tset_image_a">
+                                    <a href="./训练样本/有裂纹/">点击查看更多</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sample_after_cuting">
+                    <p class="sample_set_03">切割后无裂纹</p>
+                    <table class="test_table2">
+                        <tr>
+                            <td>
+                                <img src="./训练样本/无裂纹/2_slice_2_4.jpg" alt="" class="training_image">
+                                <img src="./训练样本/无裂纹/2_slice_4_0.jpg" alt="" class="training_image">
+                                <img src="./训练样本/无裂纹/2_slice_4_1.jpg" alt="" class="training_image">
+                                <img src="./训练样本/无裂纹/2_slice_4_2.jpg" alt="" class="training_image">
+
+                                <div class="tset_image_a">
+                                    <a href="./训练样本/无裂纹/">点击查看更多</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- vit介绍 -->
+        <div class="vit_introduce">
+            <h3 class="vit_introduce_h3">vit介绍</h3>
+            <div class="vit_background">
+                <p class="vit_background_01">采用ViT-B /16进行裂纹补丁检测，属于二值分类。因此，需要对ViT-B /16的结构进行修
+                    改。与CNN相比，ViT-B/16缺乏固有的局部感知偏差，这需要大量的训练图像才能达到相
+                    当的性能。然而，用有限的数据集来收集如此庞大的训练数据集是不切实际的。已有研究
+                    利用GAN网络生成合成裂纹图像，以补充ViT的训练数据[23]。然而，这些合成的裂缝图
+                    像不足以替代真实的裂缝图像。为了克服以往研究的不足，我们采用了一种新的策略，将
+                    每个完整图像划分为更小的图像块，为ViT训练创建了丰富的图像数据序列。
+                    首先，针对裂纹补丁检测的二值分类任务，对ViT-B/16的损失函数进行了修正;可以将
+                    损失函数修改为:
+                    𝐿 = −
+                    1
+                    𝑁
+                    ∑ [𝑦𝑖
+                    ∙ log(𝑝𝑖
+                    ) + (1 − 𝑦𝑖
+                    ) ∙ log(1 − 𝑝𝑖
+                    )]
+                    𝑁
+                    𝑙=1
+                    (1)
+                    其中N为训练数据集的个数，为训练数据集的标号。 𝑦𝑖
+                    𝑖
+                    𝑡ℎ
+                    其次，为了满足改进ViT对训练图像的需求，通过图像补丁构建训练数据集;将一张
+                    4500 × 3500路面图像分为25个图像补丁，记为G。图像patch的大小为:900 × 700
+                    𝐺 = [𝑔1, 𝑔2, 𝑔3, … , 𝑔25] (2)
+                    其中为图像patch。𝑔𝑖
+                    𝑖
+                    𝑡ℎ每个patch作为一个单独的训练图像进行处理，允许训练数据集的
+                    数量显著增加。
+                    训练数据集分为两类:1)裂纹 patch;2)非裂纹补丁，通过人工选择进行区分并相应标注。
+                    利用维特识别裂纹块,然后将裂纹块的坐标作为 BP 神经网络(输入层,中间层,输出层)的输
+                    入,利用 BP 神经网络实现裂纹分裂</p>
+            </div>
+
+        </div>
+
+    </div>
 </body>
+
 </html>
