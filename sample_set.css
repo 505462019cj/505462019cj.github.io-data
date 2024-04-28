@@ -1,0 +1,142 @@
+body {
+    /* background-color: rgb(205, 218, 230); */
+    height: 1400px;
+}
+
+.all {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.sample_set {
+    position: absolute;
+    top: 20px;
+    width: 98%;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.test_sample_h3_01 {
+    height: 30px;
+    width: 200px;
+    background-color: rgb(172, 187, 230);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.test_table {
+    /* border: 1px solid rgb(122, 144, 143); */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    width: 350px;
+    height: 250px;
+    text-align: center;
+    position: absolute;
+    top: 60px;
+
+}
+
+.test_image {
+    height: 100px;
+    width: 150px;
+}
+
+.tset_image_a {
+    margin-top: 20px;
+}
+
+.sample_set_02 {
+    position: absolute;
+    top: 350px;
+    width: 98%;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.sample_set_h3_1 {
+    position: absolute;
+    height: 30px;
+    width: 200px;
+    background-color: rgb(172, 187, 230);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+
+}
+
+.container-box {
+    position: absolute;
+    top: 50px;
+    width: 98%;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+}
+
+.sample_set_03 {
+    display: flex;
+    justify-content: center;
+    height: 20px;
+}
+
+.test_table2 {
+
+    /* border: 1px solid rgb(122, 144, 143); */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    width: 160px;
+    height: 200px;
+    text-align: center;
+    margin: 15px;
+}
+
+.training_image {
+    width: 50px;
+    height: 50px;
+}
+
+.vit_introduce {
+    position: absolute;
+    width: 98%;
+    top: 675px;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.vit_background {
+    position: absolute;
+    top: 80px;
+    width: 93%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 10px 10px rgb(187, 192, 187);
+    background-color: rgb(138, 147, 162);
+}
+
+.vit_introduce_h3 {
+    height: 30px;
+    width: 200px;
+    background-color: rgb(172, 187, 230);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.vit_background_01 {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+}
