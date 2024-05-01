@@ -156,6 +156,10 @@ body {
     justify-content: center;
 }
 
-.a {
+a {
+    color: darkseagreen;
+}
+
+a:hover {
     color: aquamarine;
 }
