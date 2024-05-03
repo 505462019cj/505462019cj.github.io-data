@@ -132,7 +132,7 @@ body {
 .vit_background {
     position: absolute;
     top: 80px;
-    width: 80%;
+    width: 90%;
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -155,7 +155,6 @@ body {
     display: flex;
     justify-content: center;
 }
-
 a {
     color: darkseagreen;
 }
